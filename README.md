@@ -22,5 +22,5 @@ docker run -it --mount type=bind,source=$PWD/external/adbkey,target=/root/.andro
 You can also give access to your USB bus (the `-privileged` flag shoud be used with caution) and try it out with a local device:
 
 ```
-docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it --mount type=bind,source=$PWD/external/adbkey,target=/root/.android/adbkey --mount type=bind,source=$PWD/external/adbkey.pub --rm -v $PWD/external:/external -w /external gmetal/marathon-runner:0.5.2 marathon -m /external/Marathonfile
+docker run --privileged -v /dev/bus/usb:/dev/bus/usb -it --mount type=bind,source=$PWD/external/adbkey,target=/root/.android/adbkey --mount type=bind,source=$PWD/external/adbkey.pub,target=/root/.android/adbkey.pub --rm -v $PWD/external:/external -w /external gmetal/marathon-runner:0.5.2 marathon -m /external/Marathonfile
 ```
